@@ -1,0 +1,49 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "62374a41ffa065022cf86a6f6cb9a554",
+    "packages": [
+        {
+            "name": "lekrat/lkt-php-instance-patterns",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/Lekrat/lkt-php-instance-patterns.git",
+                "reference": "2ac0d4f53d6d60c0f04b64bb154aa53c63a322ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/Lekrat%2Flkt-php-instance-patterns/repository/archive.zip?sha=2ac0d4f53d6d60c0f04b64bb154aa53c63a322ab",
+                "reference": "2ac0d4f53d6d60c0f04b64bb154aa53c63a322ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lkt\\InstancePatterns\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "LKT PHP Instance Patterns",
+            "time": "2020-01-31T16:32:11+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.2.0"
+    },
+    "platform-dev": []
+}

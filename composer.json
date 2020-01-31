@@ -1,0 +1,25 @@
+{
+  "name": "lekrat/lkt-php-templates",
+  "description": "LKT PHP Templates",
+  "type": "library",
+  "version": "1.0.0",
+  "require": {
+    "php": ">=7.2.0",
+    "lekrat/lkt-php-instance-patterns": "^1.0.0"
+  },
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://gitlab.com/Lekrat/lkt-php-instance-patterns.git"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Lkt\\Templates\\": "src"
+    },
+    "files": [
+      "functions.php"
+    ]
+  }
+}
