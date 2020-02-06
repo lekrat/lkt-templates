@@ -2,10 +2,10 @@
   "name": "lkt-php/lkt-templates",
   "description": "LKT PHP Templates",
   "type": "library",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "require": {
     "php": ">=7.2.0",
-    "lkt-php/lkt-instance-patterns": "^1.0.7"
+    "lkt-php/lkt-instance-patterns": "^1.0.9"
   },
   "license": "MIT",
   "repositories": [
