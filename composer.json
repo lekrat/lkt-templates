@@ -5,13 +5,13 @@
   "version": "1.0.0",
   "require": {
     "php": ">=7.2.0",
-    "lekrat/lkt-php-instance-patterns": "^1.0.0"
+    "lkt-php/lkt-instance-patterns": "^1.0.7"
   },
   "license": "MIT",
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://gitlab.com/Lekrat/lkt-php-instance-patterns.git"
+      "url": "https://gitlab.com/lkt-php/lkt-instance-patterns.git"
     }
   ],
   "autoload": {
