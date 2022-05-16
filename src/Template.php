@@ -4,6 +4,7 @@ namespace Lkt\Templates;
 
 use Lkt\InstancePatterns\AbstractInstances\AbstractParserInstance;
 use Lkt\InstancePatterns\Traits\InstantiableTrait;
+use function Lkt\Tools\System\isAbsolutePath;
 
 /**
  * Class Template
