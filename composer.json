@@ -1,27 +1,21 @@
 {
-  "name": "lkt-php/lkt-templates",
-  "description": "LKT PHP Templates",
+  "name": "lkt/templates",
+  "description": "LKT PHP Template",
   "type": "library",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "require": {
     "php": ">=7.2.0",
-    "lkt-php/lkt-instance-patterns": "^1.1",
-    "lkt-php/lkt-tools": "^1.1"
+    "lkt/tools": "^1.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.5.20",
+    "symfony/var-dumper": "^5.0"
   },
   "license": "MIT",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://gitlab.com/lkt-php/lkt-instance-patterns"
-    },
-    {
-      "type": "vcs",
-      "url": "https://gitlab.com/lkt-php/lkt-tools"
-    }
-  ],
   "autoload": {
     "psr-4": {
-      "Lkt\\Templates\\": "src"
+      "Lkt\\Templates\\": "src",
+      "Lkt\\Templates\\Tests\\": "tests"
     }
   }
 }

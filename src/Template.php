@@ -2,43 +2,52 @@
 
 namespace Lkt\Templates;
 
-use Lkt\InstancePatterns\AbstractInstances\AbstractParserInstance;
-use Lkt\InstancePatterns\Traits\InstantiableTrait;
 use function Lkt\Tools\System\isAbsolutePath;
 
-/**
- * Class Template
- * @package Lkt\Templates
- */
-class Template extends AbstractParserInstance
-{
-    use InstantiableTrait;
 
+class Template
+{
     protected $file = '';
     protected $data = [];
 
     /**
-     * Template constructor.
-     * @param string $name
-     * @param array $data
+     * @param string $templatePath
+     * @return static
      */
-    public function __construct(string $name, array $data = [])
+    public static function file(string $templatePath): self
     {
-        $name = trim($name);
-        if (isAbsolutePath($name)) {
-            $this->file = $name;
-        } else {
-            $this->file = __DIR__ . '/' . $name;
-        }
+        return new static($templatePath);
+    }
 
-        foreach ($data as $key => $datum){
-            $this->set($key, $datum);
+    /**
+     * @param string $templatePath
+     */
+    public function __construct(string $templatePath)
+    {
+        $templatePath = trim($templatePath);
+        if (isAbsolutePath($templatePath)) {
+            $this->file = $templatePath;
+        } else {
+            $this->file = __DIR__ . '/' . $templatePath;
         }
     }
 
     /**
+     * @param array $data
+     * @return $this
+     */
+    public function setData(array $data = []): self
+    {
+        foreach ($data as $key => $datum) {
+            $this->set($key, $datum);
+        }
+        return $this;
+    }
+
+    /**
      * @param string $key
-     * @param null $value
+     * @param $value
+     * @return void
      */
     public function set(string $key, $value = null)
     {
@@ -48,7 +57,7 @@ class Template extends AbstractParserInstance
     /**
      * @return string
      */
-    public function parse() :string
+    public function parse(): string
     {
         $r = '';
         if (file_exists($this->file)) {
@@ -59,5 +68,13 @@ class Template extends AbstractParserInstance
             \ob_end_clean();
         }
         return $r;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->parse();
     }
 }
