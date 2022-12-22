@@ -6,13 +6,10 @@ use function Lkt\Tools\System\isAbsolutePath;
 
 abstract class BaseTemplate
 {
-    protected $file = '';
-    protected $data = [];
+    protected string $file = '';
+    protected array $data = [];
 
-    /**
-     * @param string|null $templatePath
-     */
-    public function __construct(string $templatePath = null)
+    public function __construct(?string $templatePath = null)
     {
         if (trim($this->file) !== '' && $templatePath === null) {
             return;
@@ -25,10 +22,6 @@ abstract class BaseTemplate
         }
     }
 
-    /**
-     * @param array $data
-     * @return $this
-     */
     public function setData(array $data = []): self
     {
         foreach ($data as $key => $datum) {
@@ -37,19 +30,12 @@ abstract class BaseTemplate
         return $this;
     }
 
-    /**
-     * @param string $key
-     * @param $value
-     * @return void
-     */
-    public function set(string $key, $value = null)
+    public function set(string $key, $value = null): static
     {
         $this->data[$key] = $value;
+        return $this;
     }
 
-    /**
-     * @return string
-     */
     public function parse(): string
     {
         $r = '';
@@ -63,9 +49,6 @@ abstract class BaseTemplate
         return $r;
     }
 
-    /**
-     * @return string
-     */
     public function __toString(): string
     {
         return $this->parse();
